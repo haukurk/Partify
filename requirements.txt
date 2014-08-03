@@ -1,0 +1,4 @@
+redis
+gevent
+tweepy
+flask

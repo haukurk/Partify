@@ -1,0 +1,13 @@
+.DS_Store
+venv
+*.pyc
+node_modules
+bower_components
+base/static/build
+base/static/libs
+**/vendor.*
+**/fonts/*fontawesome*
+**/fonts/*glyphicons*
+**/fonts/*ionicons*
+.idea
+config.py

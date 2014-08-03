@@ -1,0 +1,8 @@
+{
+  "name": "twitter-partify",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat": "*"
+  }
+}
