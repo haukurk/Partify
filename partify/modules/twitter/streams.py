@@ -1,12 +1,15 @@
-import time
 import sys
-
 import tweepy
-
 from partify.modules.twitter import auth, filters
 
 
 def start(hashtags, callback):
+    """
+    Function that starts a streaming session.
+    :param hashtags: hashtags to filter from the Twitter Streaming API.
+    :param callback: callback function.
+    :return: None.
+    """
     listen = PartifyTwitterStreamListener(tweepy.API(auth), callback)
     stream = tweepy.Stream(auth, listen)
 
@@ -17,7 +20,9 @@ def start(hashtags, callback):
 
 
 class PartifyTwitterStreamListener(tweepy.StreamListener):
+    """
 
+    """
     def __init__(self, api, callback):
         self.api = api
         self.callback = callback

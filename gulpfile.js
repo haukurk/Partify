@@ -16,6 +16,8 @@ buildBowerSrc('bower_components/ionicons/css/ionicons.min.css',bower_src.css);
 /* Bower - JS */
 buildBowerSrc('bower_components/jquery/dist/jquery.min.js',bower_src.js);
 buildBowerSrc('bower_components/bootstrap/dist/js/bootstrap.min.js',bower_src.js);
+buildBowerSrc('bower_components/mustache/mustache.js',bower_src.js);
+buildBowerSrc('bower_components/moment/min/moment.min.js',bower_src.js);
 
 /* Bower - Fonts */
 buildBowerSrc('bower_components/bootstrap/dist/fonts/*.{otf,eot,svg,ttf,woff}',bower_src.fonts);

@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+    function addEntry(entry) {
+      var template = $('#entry-template').html();
+      var rendered = Mustache.render(template, entry);
+      $('#stream').prepend(rendered);
+    }
+
+
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/stream');
 
     // Define on connect data
@@ -23,7 +30,17 @@ $(document).ready(function(){
      Twitter Event.
      */
     socket.on('stream-data-twitter', function(msg) {
-        $('#stream').prepend('<p>'+msg.data.screen_name+': ' + msg.data.text + '</p>');
+
+        // Add Entry from a mustache template.
+        addEntry({
+            socialtype: "Twitter",
+            name: msg.data.screen_name,
+            sharemessage: "Shared on Twitter",
+            date: moment().format("MMM Do YY"),
+            textmessage: msg.data.text,
+            profile_image_url: msg.data.profile_image_url
+        });
+
     });
 
     /*
@@ -50,6 +67,28 @@ $(document).ready(function(){
 
         }
     });
+
+    $('.panel-google-plus > .panel-footer > .input-placeholder, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function(event) {
+        var $panel = $(this).closest('.panel-google-plus');
+            $comment = $panel.find('.panel-google-plus-comment');
+
+        $comment.find('.btn:first-child').addClass('disabled');
+        $comment.find('textarea').val('');
+
+        $panel.toggleClass('panel-google-plus-show-comment');
+
+        if ($panel.hasClass('panel-google-plus-show-comment')) {
+            $comment.find('textarea').focus();
+        }
+   });
+   $('.panel-google-plus-comment > .panel-google-plus-textarea > textarea').on('keyup', function(event) {
+        var $comment = $(this).closest('.panel-google-plus-comment');
+
+        $comment.find('button[type="submit"]').addClass('disabled');
+        if ($(this).val().length >= 1) {
+            $comment.find('button[type="submit"]').removeClass('disabled');
+        }
+   });
 
 });
 

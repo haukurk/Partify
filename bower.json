@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "dependencies": {
     "jquery": null,
+    "mustache": null,
     "bootstrap": null,
     "fontawesome": null,
-    "ionicons": null
+    "ionicons": null,
+    "moment": null
   }
 }

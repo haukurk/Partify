@@ -3,7 +3,9 @@ Partify is an dashboard for looking at feeds from Instagram and Twitter in real-
 It is specially made for occasions like weddings, and annual celebrations where guests can tag their posts to share 
 tweets or picture about the occasion :-)
 
-*tags: Python, Flask, SocketIO, Redis, Bootstrap*
+![Screenshot](./docs/images/overview-twitter-feed.png)
+
+*tags: Python, Flask, SocketIO, Redis, Bootstrap, Gulp*
 
 # Installation
 
