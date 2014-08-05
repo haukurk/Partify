@@ -17,7 +17,7 @@ def search_twitter(hashtag):
     @return: JSON response.
     """
 
-    hashtag = "#%s" % str(hashtag)
+    hashtag = u"#%s" % unicode(hashtag)
 
     searched_tweets = []
 

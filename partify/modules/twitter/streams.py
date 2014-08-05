@@ -21,7 +21,8 @@ def start(hashtags, callback):
 
 class PartifyTwitterStreamListener(tweepy.StreamListener):
     """
-
+    Twitter StreamListener Class, inherits tweepy.StreamListener.
+    Modifies the inherited class triggering socketio functions when status event occurs.
     """
     def __init__(self, api, callback):
         self.api = api

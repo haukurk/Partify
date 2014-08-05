@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-    function addEntry(entry) {
-      var template = $('#entry-template').html();
+    function addEntryTwitter(entry) {
+      var template = $('#twitter-entry-template').html();
       var rendered = Mustache.render(template, entry);
       $('#stream').prepend(rendered);
     }
@@ -32,7 +32,7 @@ $(document).ready(function(){
     socket.on('stream-data-twitter', function(msg) {
 
         // Add Entry from a mustache template.
-        addEntry({
+        addEntryTwitter({
             socialtype: "Twitter",
             name: msg.data.screen_name,
             sharemessage: "Shared on Twitter",

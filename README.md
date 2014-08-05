@@ -38,7 +38,7 @@ Install all python modules
 $> pip install -r requirements.txt
 ```
 
-Build vendors (Bootstrap, jQuery, FontAwesome, IonIcons)
+Build vendors (Bootstrap, jQuery, FontAwesome, IonIcons, MomentJS, MustacheJS)
 ```
 $> gulp default
 ```
