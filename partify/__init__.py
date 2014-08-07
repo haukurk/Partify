@@ -24,10 +24,11 @@ socketio = SocketIO(app)
 thread = None
 
 # # Api routing
-# Example Weather Route
 from modules.twitter.routes import mod as twitter_module
+from modules.instagram.routes import mod as instagram_module
 
 app.register_blueprint(twitter_module)
+app.register_blueprint(instagram_module)
 
 # Globals used to keep track of Consumer/Producer services
 producers = {}   # Stores each Producer service

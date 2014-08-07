@@ -5,12 +5,13 @@ from __init__ import auth
 from partify.common import responses
 from partify.common import statuscodes
 
-mod = Blueprint('cakes', __name__, url_prefix='/api')
+mod = Blueprint('tweets', __name__, url_prefix='/api')
 
 twitter_api = tweepy.API(auth)
 
-@mod.route('/twitter/<string:hashtag>', methods=['GET'])
-def search_twitter(hashtag):
+
+@mod.route('/twitter/<string:hashtag>/<int:_posts>', methods=['GET'])
+def search_twitter(hashtag, max_posts=100):
     """
     Route that queries Twitter from a given hashtag
     @param hashtag: twitter hashtag
@@ -22,7 +23,7 @@ def search_twitter(hashtag):
     searched_tweets = []
 
     try:
-        searched_tweets = twitter_api.search(q=hashtag, result_type="recent", count=100)
+        searched_tweets = twitter_api.search(q=hashtag, result_type="recent", count=max_posts)
     except tweepy.TweepError as e:
         # depending on TweepError.code, one may want to retry or wait
         # to keep things simple, we will give up on an error
