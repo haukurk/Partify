@@ -1,15 +1,24 @@
 # Flask config parameters
-STATIC_FOLDER_DEV = '/opt/workspace/python/partify/static'
+STATIC_FOLDER_DEV = '/tmp/partify/static'
 CSRF_ENABLED = True
 CSRF_SESSION_KEY = "Mooooow01"
 SECRET_KEY = 'Ch4ngm3'
 
+# Redis
+REDIS_IP = "127.0.0.1"
+REDIS_PORT = "6379"
+REDIS_AUTH = False
+REDIS_PASSWORD = "XXXXXXXXXXXXXXX"
+
 # Twitter Authentication - You have to get this from dev.twitter.com -
-CONSUMER_KEY = "sfdgsdzfsdfgsdfsdfsdf"
-CONSUMER_SECRET = "v9PXszapOt5bvo30RsFT4Egasfdgfv4LWVgrzkHDygwtTYIDUgcd0J4yz"
-ACCESS_TOKEN = "20471824-FLJfsgdfgsfdL0gDETUzbxXmCuw1mDjnqhd9TTCw9umVMWWXQI"
-ACCESS_TOKEN_SECRET = "SyHzdNqRZs9SXsfdgsfdgsdfhDK9NZKcLswzUDVUaazCaUPQRBU8VekR"
+CONSUMER_KEY = "XXXXXXXXXXXXXXX"
+CONSUMER_SECRET = "XXXXXXXXXXXXXXX"
+ACCESS_TOKEN = "20471824-XXXXXXXXXXXXXXX"
+ACCESS_TOKEN_SECRET = "XXXXXXXXXXXXXXX"
+
+# Instragram Authenticartion - You have to get this from
+INSTAGRAM_AUTH_TOKEN = "XXXXXXXXXXXXXXX"
 
 # Partify Configuration
-TWITTER_SEARCH_HASHTAG = ""
-INSTAGRAM_SEARCH_HASHTAG = ""
+TWITTER_ENABLE = True
+INSTRAGRAM_ENABLE = True

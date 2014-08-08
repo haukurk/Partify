@@ -1,13 +1,16 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request, Response
 import filters
+import config
 from __init__ import api
 from partify.common import responses
 from partify.common import statuscodes
 
+from streams import reactor, subscriptions
+
 mod = Blueprint('instagram', __name__, url_prefix='/api/instagram')
 
 
-@mod.route('/hook/<string:subscription>', methods=['GET'])
+@mod.route('/hook/<string:subscription>', methods=['GET','POST'])
 def instagram_hook(subscription):
     """
     Route that hooks real-time feed to instagram
