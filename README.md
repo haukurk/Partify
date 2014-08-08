@@ -59,7 +59,23 @@ To get the token, do the following:
 * Copy the [TOKEN] string from the URL and save it in config.py.
 
 ## Twitter
-To obtain the access 
+To obtain the tokens for Twitter you have to start by login into Apps Management (https://apps.twitter.com/) with your Twitter user credentials.
+
+When logged in, do the following to create a app access:
+* Create a new application by clicking "Create New App".
+* Fill in a name and a description that you find suitable.
+* Input some valid URL.
+* Skip the callback URI.
+* Press "Create your Twitter Application"
+
+Now you have created the application, now you only need to generate a access token:
+* Find the tab "API Keys"
+    * Copy the API Key and API secret and paste to your config.py file.
+* Generate the Access Token by pressing "Create my access token"
+    * Copy the Access Tokens and paste to your config.py file
+
+You are all set.
+
 
 # Configuration 
 
